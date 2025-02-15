@@ -1,5 +1,5 @@
 extends EditorProperty
-const BitFlagGrid := preload("res://addons/BitFlags/BitFlagGrid.gd")
+const BitFlagGrid := preload("res://addons/bit_flags/bit_flag_grid.gd")
 
 var grid: BitFlagGrid
 

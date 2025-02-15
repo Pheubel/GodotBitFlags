@@ -1,6 +1,6 @@
 extends EditorInspectorPlugin
 
-var BitFlagEditor = preload("res://addons/BitFlags/BitFlagEditor.gd")
+var BitFlagEditor = preload("res://addons/bit_flags/bit_flag_editor.gd")
 
 
 func _can_handle(object: Object) -> bool:

@@ -1,11 +1,11 @@
 @tool
 extends EditorPlugin
 
-var plugin
+var plugin: EditorInspectorPlugin
 
 
 func _enter_tree():
-	plugin = preload("res://addons/BitFlags/InspectorPlugin.gd").new()
+	plugin = preload("res://addons/bit_flags/inspector_plugin.gd").new()
 	add_inspector_plugin(plugin)
 
 
