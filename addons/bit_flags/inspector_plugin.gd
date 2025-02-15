@@ -25,8 +25,10 @@ func _parse_property(object: Object, type: Variant.Type, name: String, hint_type
 		#if parts.size() > set_size:
 			#push_warning("There are more flag names than visible bits")
 		
+		var value: int = object.get(name) as int
+
 		var editor = BitFlagEditor.new()
-		editor.set_layer_info(set_size, 4,parts)
+		editor.set_layer_info(value, set_size, 4,parts)
 		add_property_editor(name, editor)
 		
 		return true

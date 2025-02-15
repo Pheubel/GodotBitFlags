@@ -21,7 +21,9 @@ func _init():
 	
 	set_bottom_editor(hb)
 
-func set_layer_info(layer_count: int = 64, group_size: int = 4, layer_names: PackedStringArray = []) -> void:
+func set_layer_info(value: int, layer_count: int = 64, group_size: int = 4, layer_names: PackedStringArray = []) -> void:
 	grid.layer_group_size = group_size
 	grid.layer_count = layer_count
 	grid.tooltips = layer_names
+
+	grid.set_flag(value)
