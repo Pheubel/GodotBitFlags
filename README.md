@@ -3,8 +3,39 @@ This is a simple editor to change how you interact with integers as a bit mask. 
 
 ## How to use
 To use the plugin, install it in your addons folder and make sure to enable the plugin. Once enabled, you can then use it as follows:
-```gd
+```gdscript
+# Godot 4.3+
 @export_custom(PROPERTY_HINT_FLAGS, "16") var spawn_group: int
+```
+Or by defining a property list
+```gdscript
+@tool
+extends Node
+
+var spawn_group: int
+
+func _get_property_list() -> Array[Dictionary]:
+	var props: Array[Dictionary] = []
+	
+	props.append({
+		"name": "spawn_group",
+		"type": TYPE_INT,
+		"usage": PROPERTY_USAGE_DEFAULT,
+		"hint": PROPERTY_HINT_FLAGS,
+		"hint_string": "16"
+	})
+	
+	return props
+
+func _get(property: StringName) -> Variant:
+	if property == &"spawn_group":
+		return spawn_group
+	return null
+
+func _set(property: StringName, value: Variant) -> bool:
+	if property == &"spawn_group" and value is int:
+		spawn_group = value
+	return false
 ```
 This will result in the property looking like:
 
